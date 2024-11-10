@@ -29,10 +29,13 @@ void print_stack(){
     if(top == -1){
         printf("Vazia");
     }else{
+        int items = 0;
         for(int s : stack){
-            printf("%d / ", s);
+            if(s != NULL_VALUE){
+                items++;
+            }
         }
-        printf("\n");
+        printf("Quantidade atual de itens: %d \n", items);
     }
 }
 
@@ -44,8 +47,7 @@ bool isEmpty() {
 
 
 int main() {
-    printf("Validacao de pilha: ");
-
+    
     push(10);
     push(12);
     print_stack();
