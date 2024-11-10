@@ -41,8 +41,8 @@ call plug#end()
 " Abrir ou fechar a árvore de arquivos
 command! Open :NERDTreeToggle
 
-" Compilar atual cpp
-command! Compile w | !g++ -std=c++11 % -o %:r
+" Compilar o arquivo C++ atual (.cpp), salvando o executável em .build com o sufixo '_exec'
+command! Compile execute '!mkdir -p .build/%:h && g++ -std=c++11 % -o .build/%:t:r_exec'
 
-" Compilar e executar atual cpp
-command! Run w | !g++ -std=c++11 % -o %:r && ./%:r
+" Compilar e executar arquivos de teste para uma classe específica, colocando o executável em .build
+command! -nargs=1 RunTests execute '!mkdir -p .build && g++ -std=c++11 -I Mock $(find Mock -name "*.cpp") ' . substitute(toupper(<f-args>), '\(.\)\(.*\)', '\1\L\2', '') . '/test_' . tolower(<f-args>) . '*.cpp -o .build/' . tolower(<f-args>) . '_tests_exec && ./.build/' . tolower(<f-args>) . '_tests_exec'
