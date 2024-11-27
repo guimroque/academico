@@ -22,8 +22,6 @@ g++ main.cpp -o main && ./main
 
 # Bubble Sort
 
-![Bubble Sort](./images/bubble.png)
-
 - Compara elementos adjacentes e troca-os se estiverem fora de ordem.
 - Após cada varredura completa, o maior elemento estará na sua posição final (mais à direita).
 - O(n) quando o array já está ordenado
@@ -31,15 +29,11 @@ g++ main.cpp -o main && ./main
 
 # Selection Sort
 
-![Selection Sort](./images/selection.png)
-
 - Encontra o menor elemento e o move para a posição inicial.
 - Repete o processo deslocando o início da pesquisa para a direita.
 - O(nˆ2) em todos os casos
 
 # Insertion Sort
-
-![Insertion Sort](./images/insertion.png)
 
 - Divide o array em duas partes: ordenada e não ordenada.
 - Insere elementos da parte não ordenada na posição correta da parte ordenada.
